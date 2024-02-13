@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/algonzalez/Desktop/Learning_ROS/2-TurtleSim_tf_broadcast/build'
+export PWD='/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/build'
