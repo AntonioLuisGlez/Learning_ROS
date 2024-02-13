@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/algonzalez/Desktop/Learning_ROS/2-TurtleSim_tf_broadcast/install/lib;/home/algonzalez/Desktop/Learning_ROS/2-TurtleSim_tf_broadcast/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/algonzalez/Desktop/Learning_ROS/2-TurtleSim_tf_broadcast/install/lib;/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
