@@ -1,2 +1,2 @@
 learning_tf
--DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/install -G Unix Makefiles
