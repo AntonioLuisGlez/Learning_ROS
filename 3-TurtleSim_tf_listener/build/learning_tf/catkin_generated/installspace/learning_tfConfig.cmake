@@ -67,14 +67,14 @@ set(learning_tf_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(learning_tf_SOURCE_PREFIX /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/src/learning_tf)
-  set(learning_tf_DEVEL_PREFIX /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/devel)
+  set(learning_tf_SOURCE_PREFIX /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/src/learning_tf)
+  set(learning_tf_DEVEL_PREFIX /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/devel)
   set(learning_tf_INSTALL_PREFIX "")
   set(learning_tf_PREFIX ${learning_tf_DEVEL_PREFIX})
 else()
   set(learning_tf_SOURCE_PREFIX "")
   set(learning_tf_DEVEL_PREFIX "")
-  set(learning_tf_INSTALL_PREFIX /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/install)
+  set(learning_tf_INSTALL_PREFIX /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/install)
   set(learning_tf_PREFIX ${learning_tf_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

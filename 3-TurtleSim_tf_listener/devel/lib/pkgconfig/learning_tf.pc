@@ -1,4 +1,4 @@
-prefix=/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_listener/devel
+prefix=/home/algonzalez/Desktop/Learning_ROS/3-TurtleSim_tf_frames/devel
 
 Name: learning_tf
 Description: Description of learning_tf

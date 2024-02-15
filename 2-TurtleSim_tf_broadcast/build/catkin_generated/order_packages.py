@@ -2,4 +2,4 @@
 source_root_dir = '/home/algonzalez/Desktop/Learning_ROS/2-TurtleSim_tf_broadcast/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/noetic'.split(';') if '/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/devel;/opt/ros/noetic'.split(';') if '/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/devel;/opt/ros/noetic' != '' else []

@@ -1,2 +1,0 @@
-my_pkg
--DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/4-UAV_tf_tree/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/4-UAV_tf_tree/install -G Unix Makefiles

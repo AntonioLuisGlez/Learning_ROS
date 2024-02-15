@@ -1,5 +1,0 @@
-<launch>
-    <!-- Iniciar nodo tf_tree_builder -->
-    <node pkg="my_pkg" type="tf_tree.py" name="tf_tree_builder">
-    </node>
-</launch>

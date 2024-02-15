@@ -1,0 +1,8 @@
+prefix=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/install
+
+Name: tf_tree_pkg
+Description: Description of tf_tree_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
