@@ -1,4 +1,4 @@
-# Install script for directory: /home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/src/tf_tree_pkg
+# Install script for directory: /home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/src/markers_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/tf_tree_pkg/catkin_generated/installspace/tf_tree_pkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/markers_pkg/catkin_generated/installspace/markers_pkg.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tf_tree_pkg/cmake" TYPE FILE FILES
-    "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/tf_tree_pkg/catkin_generated/installspace/tf_tree_pkgConfig.cmake"
-    "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/tf_tree_pkg/catkin_generated/installspace/tf_tree_pkgConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/markers_pkg/cmake" TYPE FILE FILES
+    "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/markers_pkg/catkin_generated/installspace/markers_pkgConfig.cmake"
+    "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/markers_pkg/catkin_generated/installspace/markers_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tf_tree_pkg" TYPE FILE FILES "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/src/tf_tree_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/markers_pkg" TYPE FILE FILES "/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/src/markers_pkg/package.xml")
 endif()
 

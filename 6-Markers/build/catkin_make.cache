@@ -1,0 +1,2 @@
+marker_sensor1
+-DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/6-Markers/install -G Unix Makefiles

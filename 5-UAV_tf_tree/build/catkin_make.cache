@@ -1,2 +1,2 @@
-tf_tree_pkg
+markers_pkg
 -DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/install -G Unix Makefiles

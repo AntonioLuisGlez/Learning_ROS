@@ -486,10 +486,10 @@ rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
 
 //Value Computed by CMake
-tf_tree_pkg_BINARY_DIR:STATIC=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/tf_tree_pkg
+markers_pkg_BINARY_DIR:STATIC=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/build/markers_pkg
 
 //Value Computed by CMake
-tf_tree_pkg_SOURCE_DIR:STATIC=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/src/tf_tree_pkg
+markers_pkg_SOURCE_DIR:STATIC=/home/algonzalez/Desktop/Learning_ROS/5-UAV_tf_tree/src/markers_pkg
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
