@@ -11,21 +11,22 @@ if __name__ == "__main__":
 
     while not rospy.is_shutdown():
         # Sensor 1
-        tf_broadcaster.sendTransform((0, 0, 1),  # Cambia estos valores según la posición del sensor 1
+        tf_broadcaster.sendTransform((0.5, 0.5,0),  # Cambia estos valores según la posición del sensor 1
                                      (0, 0, 0, 1),  # Quaternion representing no rotation
                                      rospy.Time.now(),
                                      "sensor1",
                                      "base_link")
 
         # Sensor 2
-        tf_broadcaster.sendTransform((1, 1, 0),  # Cambia estos valores según la posición del sensor 2
+        tf_broadcaster.sendTransform((0.5, -0.5, 0),  # Cambia estos valores según la posición del sensor 2
                                      (0, 0, 0, 1),  # Quaternion representing no rotation
                                      rospy.Time.now(),
+                                     
                                      "sensor2",
                                      "base_link")
 
         # Sensor 3
-        tf_broadcaster.sendTransform((0, 0, 1),  # Cambia estos valores según la posición del sensor 3
+        tf_broadcaster.sendTransform((-0.5, -0.5, 0),  # Cambia estos valores según la posición del sensor 3
                                      (0, 0, 0, 1),  # Quaternion representing no rotation
                                      rospy.Time.now(),
                                      "sensor3",

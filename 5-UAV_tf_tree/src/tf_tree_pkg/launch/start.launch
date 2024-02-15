@@ -1,10 +1,10 @@
 <launch>
     <!-- Nodo para publicar la transformación estática entre map y vicon -->
-    <node pkg="tf_tree_pkg" type="map_vicon.py" name="map_vicon" output="screen"/>
+    <node pkg="tf_tree_pkg" type="base_link_sensor.py" name="base_link_sensor" output="screen"/>
 
     <!-- Nodo para publicar la transformación estática entre odom y base_link -->
-    <node pkg="tf_tree_pkg" type="odom_base_link.py" name="odom_base_link" output="screen"/>
+    <node pkg="tf_tree_pkg" type="map_vicon.py" name="map_vicon" output="screen"/>
 
     <!-- Nodo para publicar la transformación dinámica entre base_link y sensor1 -->
-    <node pkg="tf_tree_pkg" type="base_link_sensor.py" name="base_link_sensor" output="screen"/>
+    <node pkg="tf_tree_pkg" type="odom_base_link.py" name="odom_base_link" output="screen"/>
 </launch>
