@@ -1,0 +1,8 @@
+prefix=/home/algonzalez/Desktop/Learning_ROS/8-Transform_File/install
+
+Name: marker_sensor1
+Description: Description of marker_sensor1
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

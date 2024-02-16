@@ -1,0 +1,2 @@
+marker_and_point_cloud
+-DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/7-Point_Cloud/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/7-Point_Cloud/install -G Unix Makefiles
