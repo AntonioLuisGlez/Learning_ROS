@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/algonzalez/Desktop/Learning_ROS/8-Transform_File/devel/lib;/home/algonzalez/Desktop/Learning_ROS/8-Dynamic_tf/devel/lib;/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/algonzalez/Desktop/Learning_ROS/8-Transform_File/devel/lib;/home/algonzalez/Desktop/Learning_ROS/9-Dynamic_tf/devel/lib;/home/algonzalez/Desktop/Learning_ROS/8-Transform_File/devel/lib;/home/algonzalez/Desktop/Learning_ROS/7-Point_Cloud/devel/lib;/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

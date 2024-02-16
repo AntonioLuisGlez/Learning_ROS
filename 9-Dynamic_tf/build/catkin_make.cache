@@ -1,0 +1,2 @@
+dynamic_tf_pkg
+-DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/9-Dynamic_tf/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/9-Dynamic_tf/install -G Unix Makefiles

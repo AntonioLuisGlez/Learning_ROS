@@ -1,0 +1,8 @@
+prefix=/home/algonzalez/Desktop/Learning_ROS/9-Dynamic_tf/install
+
+Name: dynamic_tf_pkg
+Description: Description of dynamic_tf_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

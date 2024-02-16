@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/algonzalez/Desktop/Learning_ROS/8-Dynamic_tf/devel;/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel;/opt/ros/noetic'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/algonzalez/Desktop/Learning_ROS/9-Dynamic_tf/devel;/home/algonzalez/Desktop/Learning_ROS/8-Transform_File/devel;/home/algonzalez/Desktop/Learning_ROS/7-Point_Cloud/devel;/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel;/opt/ros/noetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

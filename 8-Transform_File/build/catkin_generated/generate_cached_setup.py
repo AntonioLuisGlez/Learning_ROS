@@ -12,7 +12,7 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in '/home/algonzalez/Desktop/Learning_ROS/8-Dynamic_tf/devel;/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel;/opt/ros/noetic'.split(';'):
+    for workspace in '/home/algonzalez/Desktop/Learning_ROS/9-Dynamic_tf/devel;/home/algonzalez/Desktop/Learning_ROS/8-Transform_File/devel;/home/algonzalez/Desktop/Learning_ROS/7-Point_Cloud/devel;/home/algonzalez/Desktop/Learning_ROS/6-Markers/devel;/opt/ros/noetic'.split(';'):
         python_path = os.path.join(workspace, 'lib/python3/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
