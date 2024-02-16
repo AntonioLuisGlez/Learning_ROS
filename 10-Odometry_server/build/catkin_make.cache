@@ -1,0 +1,2 @@
+odometry_service_pkg
+-DCATKIN_DEVEL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/10-Odometry_server/devel -DCMAKE_INSTALL_PREFIX=/home/algonzalez/Desktop/Learning_ROS/10-Odometry_server/install -G Unix Makefiles

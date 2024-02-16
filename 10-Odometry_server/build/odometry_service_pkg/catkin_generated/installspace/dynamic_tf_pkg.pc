@@ -1,0 +1,8 @@
+prefix=/home/algonzalez/Desktop/Learning_ROS/10-Odometry_server/install
+
+Name: odometry_service_pkg
+Description: Description of odometry_service_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
