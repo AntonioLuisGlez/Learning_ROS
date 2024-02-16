@@ -5,12 +5,16 @@ from visualization_msgs.msg import Marker, MarkerArray
 from sensor_msgs.msg import PointCloud
 import tf
 from geometry_msgs.msg import Point
+import math
+
 
 class MarkerPublisherNode:
     def __init__(self):
         rospy.init_node('marker_publisher_node')
-        self.marker_pub = rospy.Publisher('marker_topic', Marker, queue_size=10)
-        self.point_cloud_pub = rospy.Publisher('point_cloud_topic', PointCloud, queue_size=10)
+        self.marker_pub = rospy.Publisher(
+            'marker_topic', Marker, queue_size=10)
+        self.point_cloud_pub = rospy.Publisher(
+            'point_cloud_topic', PointCloud, queue_size=10)
         self.tf_broadcaster = tf.TransformBroadcaster()
 
     def publish_marker(self):
@@ -35,6 +39,14 @@ class MarkerPublisherNode:
         marker.color.b = 0.0
         self.marker_pub.publish(marker)
 
+    def circular_moving(self):
+        t = rospy.Time.now().to_sec() * math.pi
+        self.tf_broadcaster.sendTransform((2.0 * math.sin(t), 2.0 * math.cos(t), 0.0),
+                                          (0.0, 0.0, 0.0, 1.0),
+                                          rospy.Time.now(),
+                                          "base_link",
+                                          "odom")
+
     def publish_point_cloud(self):
         point_cloud = PointCloud()
         point_cloud.header.frame_id = "sensor2_frame"
@@ -47,11 +59,13 @@ class MarkerPublisherNode:
         self.point_cloud_pub.publish(point_cloud)
 
     def run(self):
-        rate = rospy.Rate(10)  # 10 Hz
+        rate = rospy.Rate(100)  # 100 Hz
         while not rospy.is_shutdown():
             self.publish_marker()
             self.publish_point_cloud()
+            self.circular_moving()
             rate.sleep()
+
 
 if __name__ == "__main__":
     marker_publisher = MarkerPublisherNode()
