@@ -6,5 +6,9 @@
 
     <node pkg="dynamic_tf_pkg" type="marker_and_point_cloud.py" name="marker_and_point_cloud" output="screen"/>
 
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find dynamic_tf_pkg)/config/Configuration.rviz" />
+
+
+
 </launch>
 

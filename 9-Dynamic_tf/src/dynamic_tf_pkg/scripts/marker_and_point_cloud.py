@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 
 import rospy
-from visualization_msgs.msg import Marker, MarkerArray
-from sensor_msgs.msg import PointCloud
+from visualization_msgs.msg import Marker
+from sensor_msgs.msg import PointCloud2, PointField
 import tf
-from geometry_msgs.msg import Point
 import math
-
+import struct
 
 class MarkerPublisherNode:
     def __init__(self):
         rospy.init_node('marker_publisher_node')
-        self.marker_pub = rospy.Publisher(
-            'marker_topic', Marker, queue_size=10)
-        self.point_cloud_pub = rospy.Publisher(
-            'point_cloud_topic', PointCloud, queue_size=10)
+        self.marker_pub = rospy.Publisher('marker_topic', Marker, queue_size=10)
+        self.point_cloud_pub = rospy.Publisher('point_cloud_topic', PointCloud2, queue_size=10)
         self.tf_broadcaster = tf.TransformBroadcaster()
 
     def publish_marker(self):
@@ -41,21 +38,31 @@ class MarkerPublisherNode:
 
     def circular_moving(self):
         t = rospy.Time.now().to_sec() * math.pi
-        self.tf_broadcaster.sendTransform((2.0 * math.sin(t), 2.0 * math.cos(t), 0.0),
+        self.tf_broadcaster.sendTransform((2.0 * math.sin(0.5*t), 2.0 * math.cos(0.5*t), 0.0),
                                           (0.0, 0.0, 0.0, 1.0),
                                           rospy.Time.now(),
                                           "base_link",
                                           "odom")
 
     def publish_point_cloud(self):
-        point_cloud = PointCloud()
+        point_cloud = PointCloud2()
         point_cloud.header.frame_id = "sensor2_frame"
         point_cloud.header.stamp = rospy.Time.now()
-        # Agrega algunos puntos a la nube de puntos
-        point1 = Point(x=1, y=0, z=0)
-        point2 = Point(x=0, y=1, z=0)
-        point3 = Point(x=0, y=0, z=1)
-        point_cloud.points = [point1, point2, point3]
+        point_cloud.height = 1
+        point_cloud.width = 3
+        point_cloud.fields = [PointField(name='x', offset=0, datatype=PointField.FLOAT32, count=1),
+                              PointField(name='y', offset=4, datatype=PointField.FLOAT32, count=1),
+                              PointField(name='z', offset=8, datatype=PointField.FLOAT32, count=1)]
+        point_cloud.is_bigendian = False
+        point_cloud.point_step = 12
+        point_cloud.row_step = point_cloud.point_step * point_cloud.width
+        point_cloud.is_dense = True
+
+        points = [(1, 0, 0), (0, 1, 0), (0, 0, 1)]
+        point_cloud_data = []
+        for point in points:
+            point_cloud_data.extend(struct.pack('fff', *point))
+        point_cloud.data = bytearray(point_cloud_data)
         self.point_cloud_pub.publish(point_cloud)
 
     def run(self):
@@ -65,7 +72,6 @@ class MarkerPublisherNode:
             self.publish_point_cloud()
             self.circular_moving()
             rate.sleep()
-
 
 if __name__ == "__main__":
     marker_publisher = MarkerPublisherNode()
