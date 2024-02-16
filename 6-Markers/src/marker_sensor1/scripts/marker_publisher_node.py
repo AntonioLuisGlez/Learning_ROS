@@ -14,7 +14,7 @@ class MarkerPublisherNode:
         marker = Marker()
         marker.header.frame_id = "sensor1_frame"
         marker.header.stamp = rospy.Time.now()
-        marker.type = Marker.SPHERE
+        marker.type = Marker.ARROW
         marker.action = Marker.ADD
         marker.pose.position.x = 0
         marker.pose.position.y = 0
