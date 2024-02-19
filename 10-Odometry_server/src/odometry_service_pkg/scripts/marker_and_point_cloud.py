@@ -18,12 +18,19 @@ class MarkerPublisherNode:
         self.is_publishing_odometry = False  # Variable para controlar si se está publicando odometría
 
 
+    def circular_moving(self):
+        t = rospy.Time.now().to_sec() * math.pi
+        self.tf_broadcaster.sendTransform((2.0 * math.sin(0.5*t), 2.0 * math.cos(0.5*t), 0.0),
+                                          (0.0, 0.0, 0.0, 1.0),
+                                          rospy.Time.now(),
+                                          "base_link",
+                                          "odom")
+
     def handle_odometry_service(self, request):
         rospy.loginfo("Received trigger for publishing odometry.")
 
         if not self.is_publishing_odometry:  # Si no se está publicando la odometría, iniciar la publicación
             self.is_publishing_odometry = True
-            self.circular_moving()  # Comenzar la publicación de odometría
             response_message = "Odometry publishing started."
         else:  # Si ya se está publicando la odometría, detenerla
             self.is_publishing_odometry = False
@@ -56,14 +63,6 @@ class MarkerPublisherNode:
         marker.color.b = 0.0
         self.marker_pub.publish(marker)
 
-    def circular_moving(self):
-        t = rospy.Time.now().to_sec() * math.pi
-        self.tf_broadcaster.sendTransform((2.0 * math.sin(0.5*t), 2.0 * math.cos(0.5*t), 0.0),
-                                          (0.0, 0.0, 0.0, 1.0),
-                                          rospy.Time.now(),
-                                          "base_link",
-                                          "odom")
-
     def publish_point_cloud(self):
         point_cloud = PointCloud2()
         point_cloud.header.frame_id = "sensor2_frame"
@@ -91,7 +90,8 @@ class MarkerPublisherNode:
         while not rospy.is_shutdown():
             self.publish_marker()
             self.publish_point_cloud()
-            self.handle_odometry_service()
+            if self.is_publishing_odometry:
+                        self.circular_moving()
             rate.sleep()
 
 if __name__ == "__main__":
